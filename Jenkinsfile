@@ -16,10 +16,10 @@ pipeline {
             steps {
                 // שלב זה בונה את הפרויקט
                 script {
-                    sh 'dotnet build TryTests/TryTests/TryTests.csproj'
+                    sh 'dotnet build TryTests/TryTests.csproj'
                 }
                 script {
-                    sh 'dotnet build TryTests/TryTests.Tests/TryTests.Tests.csproj'
+                    sh 'dotnet build TryTests.Tests/TryTests.Tests.csproj'
                 }
             }
         }
@@ -28,7 +28,7 @@ pipeline {
             steps {
                 // שלב זה רץ את המבחנים אם ישנם
                 script {
-                    sh 'dotnet test TryTests/TryTests.Tests/TryTests.Tests.csproj'
+                    sh 'dotnet test TryTests.Tests/TryTests.Tests.csproj'
                 }
             }
         }
