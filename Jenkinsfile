@@ -9,7 +9,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // שלב זה מוודא שאנו שולפים את הקוד מתוך Git
-                git 'https://github.com/EliiShh/TryJenkins.git'
+                git 'https://github.com/EliiShh/TryTests.git'
             }
         }
         stage('Build') {
@@ -37,7 +37,7 @@ pipeline {
             steps {
                 // שלב זה רץ את התוכנית ומדפיס את הפלט לקונסול
                 script {
-                    sh 'dotnet run --project TryJenkins/TryJenkins.csproj'
+                    sh 'dotnet run --project TryTests/TryTests.csproj'
                 }
             }
         }
